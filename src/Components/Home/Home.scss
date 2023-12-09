@@ -1,0 +1,132 @@
+$bg: rgb(16, 16, 16);
+.banner {
+  height: 400px;
+  background-color: $bg;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  &::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: $bg;
+    opacity: 0.5;
+    
+  }
+  > h1,
+  p {
+    font-size: 4rem;
+    z-index: 10;
+    width: 40%;
+    color: white;
+    padding: 1rem;
+  }
+  p {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+  }
+  > div {
+    
+    display: flex;
+    button {
+      padding: 1rem;
+      width: 8rem;
+
+      outline: none;
+      border:none;
+      cursor: pointer;
+      
+      z-index: 10;
+      margin: 1rem;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s;
+
+      &:nth-child(odd){
+        background-color: white;
+
+        &:hover{
+            background-color: black;
+            color: white;
+            svg {
+                color: white;
+            }
+        }
+      }
+      &:nth-child(even){
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        svg {
+            color: white;
+          }
+          &:hover{
+            background-color: white;
+            color: black;
+            svg {
+                color: black;
+            }
+            border: 1px solid transparent;
+        }
+      }
+      svg {
+        color: black;
+        font-size: 1.3rem;
+        margin-left: 10px ;
+      }
+    }
+  }
+}
+
+
+
+.row {
+  background-color: $bg;
+    color: white;
+  padding: 1rem;
+  > h2 {
+    margin: 0.3rem;
+  }
+  > div {
+    display: flex;
+    overflow-x: auto;
+  }
+}
+
+.card {
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin: 0.3rem;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+
+@media only screen and (max-width : 600px){
+    .banner{
+   
+        height: 500px;
+    }
+}
+@media only screen and (max-width : 500px){
+    .banner{
+        height: 550px;
+    }
+}
+@media only screen and (max-width : 330px){
+    .banner{
+        height: 600px;
+    }
+}
